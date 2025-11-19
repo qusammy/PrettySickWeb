@@ -1,0 +1,152 @@
+*
+{
+  margin: 0 auto;
+  padding: 0;
+}
+
+body
+{
+  min-height: 100vh;
+  background-image: url(assets/background.png);
+  position: relative;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  overflow-x: hidden;
+  font-family: 'Genos';
+}
+
+nav
+{
+  background-color: black;
+
+}
+
+nav ul
+{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li
+{
+  height: 50px;
+
+}
+
+nav a
+{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  border: 0.50px solid transparent;
+  transition: border-color 0.2s ease;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.nav-image img {
+  height: 65px;     /* adjust this value */
+  width: auto;      /* keeps aspect ratio */
+}
+
+.nav-image a:hover {
+  border-color: transparent !important;
+}
+
+nav a:hover
+{
+  border-color: white;
+}
+
+.sidebar
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.457);
+  backdrop-filter: blur(10px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li
+{
+  width:100%
+}
+
+.sidebar img{
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar a
+{
+  width:100%
+}
+
+.menu-button
+{
+  display: none;
+}
+.scroll-wrap 
+{
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  background: black;
+}
+
+.scroll {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll span 
+{
+  padding-right: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 150;
+  color: white;
+}
+
+.scroll-wrap:hover .scroll 
+{
+  animation-direction: reverse;
+}
+
+@keyframes scroll 
+{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media(max-width: 800px) {
+  .hideOnMobile{
+    display: none;
+  }
+
+  .menu-button
+  {
+    display: block;
+  }
+}
+
+@media(max-width: 400px) {
+  .sidebar{
+    width: 100%
+  }
+}
