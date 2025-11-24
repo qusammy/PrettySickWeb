@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-body
+body, html
 {
   min-height: 100vh;
   background-image: url(assets/background.png);
@@ -50,6 +50,13 @@ nav a
   transition: border-color 0.2s ease;
   font-size: 2rem;
   font-weight: 300;
+}
+
+a.active 
+{
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
 }
 
 .nav-image img {
@@ -101,6 +108,7 @@ nav a:hover
 {
   display: none;
 }
+
 .scroll-wrap 
 {
   width: 100%;
