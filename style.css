@@ -25,6 +25,7 @@ body, html
 {
   background-color: black;
 }
+
 .header-img 
 {
   width: 25%;
@@ -33,11 +34,84 @@ body, html
   padding-top: 7rem;
 }
 
-.text-img
-{
+.text-img{
   width: 30%;
   display: block;
   margin: 0 auto;
+}
+
+.img-gallery{
+  margin-top: 2rem;
+  text-align: center;
+
+}
+
+.img-gallery > div{
+  columns: 3;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.img-gallery img
+{
+  display: block;
+  width:100%;
+  border-radius: 5px;
+  margin-bottom: 1.25rem;
+
+}
+
+h1{
+  padding: 3rem;
+  font-size: 5rem;
+  font-weight: 300;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  width: 75%;
+}
+
+.card img{
+  width: 25%;
+}
+
+.card-text
+{
+  display: block;
+}
+
+.card h1{
+  font-size: 4rem;
+  font-weight: 300;
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.card p{
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Montserrat';
+  max-width: 600px;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* class added when element enters viewport */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 nav
@@ -83,8 +157,8 @@ a.active
 }
 
 .nav-image img {
-  height: 65px;     /* adjust this value */
-  width: auto;      /* keeps aspect ratio */
+  height: 65px;
+  width: auto;
 }
 
 .nav-image a:hover {
@@ -112,19 +186,17 @@ nav a:hover
   justify-content: flex-start;
 }
 
-.sidebar li
-{
-  width:100%
+.sidebar li{
+  width:100%;
 }
 
 .sidebar img{
-  display: flex;
-  align-items: flex-start;
+  padding-right: 35rem;
 }
 
 .sidebar a
 {
-  width:100%
+  width:100%;  
 }
 
 .menu-button
@@ -165,8 +237,10 @@ nav a:hover
   to   { transform: translateX(-50%); }
 }
 
-@media(max-width: 800px) {
-  .hideOnMobile{
+@media(max-width: 800px)
+{
+  .hideOnMobile
+  {
     display: none;
   }
 
@@ -187,10 +261,36 @@ nav a:hover
     display: block;
     margin: 0 auto;
   }
+
+  .img-gallery > div{
+  columns: 1;
+  }
+
+  h1{
+    padding-top: 20px;
+    font-size: 3rem;
+  }
+
+  .card{
+    display: block;
+  }
+
+  .card img{
+    width: 100%
+  }
+
+  .card h1{
+    font-size:4rem;
+  }
+  .card p{
+    font-size: 1.25rem;
+  }
 }
 
-@media(max-width: 400px) {
-  .sidebar{
+@media(max-width: 400px)
+{
+  .sidebar
+  {
     width: 100%
   }
 }

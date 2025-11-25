@@ -65,7 +65,19 @@
       <li class = "menu-button" onclick= showSideBar() ><a href = "#"><img src="assets/menu_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></a></li>
     </ul>
   </nav>
+ 
+  <h1>
+    PRETTY SICK ART
+  </h1>
 
+  <section class = "img-gallery">
+    <div>
+      <a href = "assets/art1.png"><img class = "reveal" src="assets/art1.png"></a>
+      <a href = "assets/art2.png"><img class = "reveal" src="assets/art2.png"></a>
+      <a href = "assets/art3.png"><img class = "reveal" src="assets/art3.png"></a>
+      <a href = "assets/art4.png"><img class = "reveal" src="assets/art4.png"></a>
+    </div>
+  </section>
   <script>
     function showSideBar()
     {
@@ -77,6 +89,17 @@
       const sidebar = document.querySelector('.sidebar')
       sidebar.style.display = 'none';
     }
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    revealElements.forEach(el => observer.observe(el));
   </script>
   
 </body>
