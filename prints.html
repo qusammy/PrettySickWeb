@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 </head>
 <body class="sub-page">
-  <div class="scroll-wrap">
+  <div class="sub-scroll-wrap">
   <div class="scroll">
     <span>PRETTY SICK</span>
     <span>PRETTY SICK</span>
@@ -47,7 +47,7 @@
     <span>PRETTY SICK</span>
   </div>
 </div>
-    <nav>
+    <nav class = "nav-bg">
       <ul class = "sidebar">
       <li onclick= hideSideBar() ><a href = "#"><img src="assets/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></a></li>
       <li><a href = "index.html">HOME</a></li>
@@ -66,9 +66,8 @@
     </ul>
   </nav>
 
-  <h1>
-    PRETTY SICK PRINTS
-  </h1>
+  <h1 id="shuffle">pretty sick prints</h1>
+
 
   <section class = "img-gallery">
     <div>
@@ -82,6 +81,51 @@
   </section>
 
   <script>
+    class ShuffleText {
+      constructor(element) {
+        this.element = element;
+        this.original = element.textContent.split("");
+
+        const pool = "!@#$%^&*()";
+        this.scrambleOnce = this.original.map(ch =>
+          ch === " " ? " " : pool[Math.floor(Math.random() * pool.length)]
+        );
+
+        this.duration = 800; //ms
+        this.startTime = null;
+      }
+
+      start() {
+        this.startTime = performance.now();
+        this.tick();
+      }
+
+      tick() {
+        const now = performance.now();
+        const progress = Math.min((now - this.startTime) / this.duration, 1);
+
+        const revealIndex = Math.floor(progress * this.original.length);
+
+        const output = this.original.map((ch, i) => {
+          if (i < revealIndex) return ch;
+          return this.scrambleOnce[i];
+        });
+
+        this.element.textContent = output.join("");
+
+        if (progress < 1) {
+          requestAnimationFrame(() => this.tick());
+        }
+      }
+  }
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('shuffle');
+      const sh = new ShuffleText(el, { 
+          duration: 3500,
+          easing: p => 1 - Math.pow(1 - p, 3)
+        });
+      sh.start();
+    });
     function showSideBar()
     {
       const sidebar = document.querySelector('.sidebar')

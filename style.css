@@ -62,7 +62,6 @@ body, html
 }
 
 h1{
-  padding: 3rem;
   font-size: 5rem;
   font-weight: 300;
   color: white;
@@ -116,7 +115,6 @@ h1{
 nav
 {
   background-color: black;
-
 }
 
 nav ul
@@ -170,6 +168,10 @@ nav a:hover
   border-color: white;
 }
 
+.nav-bg{
+  background-image: url("assets/navbg.gif");
+}
+
 .sidebar
 {
   position: fixed;
@@ -202,6 +204,14 @@ nav a:hover
 .menu-button
 {
   display: none;
+}
+
+.sub-scroll-wrap
+{
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  background-image: url("assets/navbg.gif");
 }
 
 .scroll-wrap 
@@ -239,6 +249,13 @@ nav a:hover
 
 @media(max-width: 800px)
 {
+
+  .scroll {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 5s linear infinite;
+  }
+
   .hideOnMobile
   {
     display: none;
@@ -265,6 +282,12 @@ nav a:hover
   .img-gallery > div{
   columns: 1;
   }
+
+  .img-gallery{
+  margin-top: 1rem;
+  text-align: center;
+
+}
 
   h1{
     padding-top: 20px;
