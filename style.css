@@ -241,6 +241,11 @@ nav a:hover
   animation-direction: reverse;
 }
 
+.sub-scroll-wrap:hover .scroll 
+{
+  animation-direction: reverse;
+}
+
 @keyframes scroll 
 {
   from { transform: translateX(0); }
