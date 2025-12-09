@@ -43,7 +43,7 @@ body, html
 .img-gallery{
   margin-top: 2rem;
   text-align: center;
-
+  width:95%;
 }
 
 .img-gallery > div{
@@ -65,40 +65,65 @@ h1{
   font-size: 5rem;
   font-weight: 300;
   color: white;
+  padding-top: 3rem;
   display: flex;
   justify-content: center;
   text-align: center;
 }
+
+.promo
+{
+  padding-top: 10rem;
+  display: flex;
+}
+
+h2
+{
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #737373;
+  text-align: center;
+}
+
+.promo-text{
+  color: #737373;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.promo-text:hover
+{
+  text-decoration: line-through;
+}
+
 
 .card{
   display: flex;
   flex-direction: row;
   justify-items: flex-start;
   width: 75%;
+  padding-top: 5rem;
 }
 
 .card img{
-  width: 25%;
+  width: 35%;
 }
 
 .card-text
 {
-  display: block;
+  font-size: 2rem;
+  color: white;
+  font-family: 'GFS Neohellenic';
+  max-width: 600px;
+  text-align: center;
 }
 
 .card h1{
   font-size: 4rem;
   font-weight: 300;
   color: white;
-  font-family: 'Montserrat';
-}
-
-.card p{
-  font-size: 1.5rem;
-  color: white;
-  font-family: 'Montserrat';
-  max-width: 600px;
-  text-align: center;
+  font-family: 'GFS Neohellenic';
 }
 
 .reveal {
@@ -252,9 +277,46 @@ nav a:hover
   to   { transform: translateX(-50%); }
 }
 
-@media(max-width: 800px)
+@media(max-width: 1000px)
 {
 
+  h2{
+    font-size: 1.75rem;
+  }
+
+  .promo
+  {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a{
+    font-size: 1.10rem;
+  }
+  .card{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    
+  }
+  .card img{
+    width: 100%;
+  }
+
+  .card h1{
+    font-size:4rem;
+  }
+  .card-text
+  {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+}
+@media(max-width: 800px)
+{
   .scroll {
     display: flex;
     white-space: nowrap;
@@ -299,6 +361,21 @@ nav a:hover
     font-size: 3rem;
   }
 
+  h2{
+    font-size: 1.10rem;
+  }
+
+  .promo
+  {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a{
+    font-size: 1.10rem;
+  }
+
   .card{
     display: block;
   }
@@ -310,9 +387,12 @@ nav a:hover
   .card h1{
     font-size:4rem;
   }
-  .card p{
+  .card-text
+  {
     font-size: 1.25rem;
+    padding-top: 1rem;
   }
+
 }
 
 @media(max-width: 400px)
